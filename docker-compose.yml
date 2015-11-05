@@ -1,0 +1,11 @@
+web:
+  build: .
+  ports:
+    - "4000:4000"
+  links:
+    - db
+db:
+  image: postgres
+  environment:
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: postgres
