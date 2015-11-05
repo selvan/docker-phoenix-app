@@ -1,16 +1,15 @@
-FROM selvan/phoenix:latest
+FROM selvan/phoenix:1.0.2
 
 MAINTAINER selvan <p.thamarai@gmail.com>
 
 ADD . /code
+VOLUME /code
 WORKDIR /code
+
 RUN mix do deps.get, deps.compile
 RUN npm install
 
-ENV MIX_ENV prod
-RUN mix do compile
-
-RUN node_modules/brunch/bin/brunch build --production
+RUN export PATH=/usr/local/bin:$PATH
 
 CMD mix phoenix.server
 

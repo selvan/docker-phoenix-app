@@ -1,0 +1,9 @@
+web:
+  build: .
+  dockerfile: Dockerfile.prod
+  ports:
+    - "4000:4000"  
+  links:
+    - db
+  environment:
+    PORT: 4000    
