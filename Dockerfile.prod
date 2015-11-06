@@ -8,7 +8,7 @@ RUN mix do deps.get, deps.compile
 RUN npm install
 
 ENV MIX_ENV prod
-RUN mix do compile
+RUN mix compile
 
 RUN export PATH=/usr/local/bin:$PATH
 RUN node_modules/brunch/bin/brunch build --production
