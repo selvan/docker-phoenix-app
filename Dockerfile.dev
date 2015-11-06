@@ -11,6 +11,4 @@ RUN npm install
 
 RUN export PATH=/usr/local/bin:$PATH
 
-CMD mix phoenix.server
-
 EXPOSE  4000
